@@ -1,8 +1,0 @@
-{
-    "/*": {
-    "target": "https://www.loteriasyapuestas.es",
-    "secure": false,
-    "logLevel": "debug",
-    "changeOrigin": true
-    }
-    }
