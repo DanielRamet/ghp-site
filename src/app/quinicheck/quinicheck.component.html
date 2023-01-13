@@ -1,1 +1,6 @@
-<p>{{this.text}}</p>
+<span>Jornada 33</span>
+<ul>
+    <li *ngFor="let player of latestBets | async">
+        <span>{{player.player}} - Aciertos: {{player.hits}}</span>
+    </li> 
+</ul>
