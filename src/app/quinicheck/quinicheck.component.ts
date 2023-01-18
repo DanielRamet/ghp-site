@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { PlayerBet } from '../model/model';
+import { BetResult, PlayerBet } from '../model/model';
 import { FootballDataService } from '../services/football-data.service';
 
 @Component({
@@ -12,10 +12,10 @@ export class QuinicheckComponent implements OnInit {
 
   constructor(private footballData: FootballDataService) { }
 
-  latestBets: Observable<PlayerBet[]>;
+  bets: Observable<BetResult[]>;
 
   ngOnInit(): void {
-    this.latestBets = this.footballData.getLatestBets();
+    this.bets = this.footballData.getAllBets('2023');
   }
 
 }

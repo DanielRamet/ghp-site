@@ -1,6 +1,14 @@
-<span>Jornada 33</span>
-<ul>
-    <li *ngFor="let player of latestBets | async">
-        <span>{{player.player}} - Aciertos: {{player.hits}}</span>
-    </li> 
-</ul>
+<div *ngFor="let bet of bets | async">
+    <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <span>Jornada {{bet.matchday}}</span>
+          </mat-panel-title>
+          <mat-panel-description>
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <ul>
+            <li *ngFor="let player of bet.bets">{{player.player}} - Aciertos: {{player.hits}}</li>
+        </ul>
+    </mat-expansion-panel>
+</div>

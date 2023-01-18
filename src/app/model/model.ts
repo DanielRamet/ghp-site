@@ -5,3 +5,8 @@ export class PlayerBet {
     public player: string;
     public hits: number;
 }
+
+export class BetResult {
+    matchday: number;
+    bets: PlayerBet[];
+}

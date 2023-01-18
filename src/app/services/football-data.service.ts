@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { PlayerBet } from '../model/model';
+import { BetResult, PlayerBet } from '../model/model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,11 +11,7 @@ export class FootballDataService {
 
   constructor(private http: HttpClient) { }
 
-  public getLatestBets() {
-    let season: string = '2023';
-    let matchday: string= '33';
-
-    return this.http.get<PlayerBet[]>(this.BASE_URL + '/matchday', {params: {
-      season: season, matchday: matchday}});
+  public getAllBets(season: string) {
+    return this.http.get<BetResult[]>(this.BASE_URL + '/season', {params: { season: season}});
   }
 }
